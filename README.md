@@ -19,6 +19,11 @@ composer require semarangdev/bayar-duitku-php
 ### Inisiasi
 
 ```php
+require_once 'vendor/autoload.php';
+
+use SemarangDev\Duitku\Duitku;
+use SemarangDev\Duitku\Model\Config;
+
 $config = Config::make([
     'merchant_code' => 'MOCK1',
     'merchant_key' => 'mock1111111111111111111111111111',
@@ -35,6 +40,10 @@ $duitku = Duitku::init($config);
 Digunakan untuk membuat transaksi baru.
 
 ```php
+
+use SemarangDev\Duitku\Model\Item;
+use SemarangDev\Duitku\Model\Billing;
+
 $items = [
     Item::make([
         'name' => 'Laptop Bagus',
@@ -141,6 +150,8 @@ var_dump($result);
 Silahkan gunakan `Callback` model untuk mengubah `request callback duitku` sehingga memprosesnya lebih mudah.
 
 ```php
+use SemarangDev\Duitku\Model\Callback;
+
 $callback = Callback::make($_POST);
 
 var_dump($callback->toArray());
