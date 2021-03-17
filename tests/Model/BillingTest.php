@@ -39,7 +39,7 @@ class BillingTest extends TestCase
         $this->expectDeprecationMessage('Item must be instance of ' . Item::class);
         $item = Item::make([
             'name' => 'Token PLN',
-            'price' => 1000,
+            'price' => 20000,
             'quantity' => 20,
         ]);
         Billing::make([
@@ -58,7 +58,7 @@ class BillingTest extends TestCase
         $items = [
             Item::make([
                 'name' => 'Sandal Jepit',
-                'price' => 10000,
+                'price' => 20000,
                 'quantity' => 2,
             ]),
             Item::make([

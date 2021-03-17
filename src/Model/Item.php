@@ -12,6 +12,6 @@ class Item extends Model
 
     public function getTotalAttribute()
     {
-        return $this->price * $this->quantity;
+        return $this->price;
     }
 }

@@ -33,16 +33,16 @@ class ItemTest extends TestCase
     {
         $item = Item::make([
             'name' => 'Token PLN',
-            'price' => 1000,
+            'price' => 20000,
             'quantity' => 20,
         ]);
         $this->assertSame('Token PLN', $item->name);
-        $this->assertSame(1000, $item->price);
+        $this->assertSame(20000, $item->price);
         $this->assertSame(20, $item->quantity);
         $this->assertSame(20000, $item->total);
         $item->price = 2000;
         $this->assertSame(2000, $item->price);
-        $this->assertSame(40000, $item->total);
+        $this->assertSame(2000, $item->total);
         $this->assertSame(null, $item->prince);
     }
 }
