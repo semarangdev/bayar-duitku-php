@@ -62,8 +62,6 @@ class DuitkuMock extends Duitku
      */
     public function responseNewTransactionFailed(): array
     {
-        $ref = bin2hex(openssl_random_pseudo_bytes(5));
-
         return [
             'message' => 'Error has ben occured.',
         ];
